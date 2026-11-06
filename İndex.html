@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>FOXHUB 🦊 | Ücretsiz Türkçe Altyazılı & HD Video Platformu</title>
+    <meta name="description" content="FOXHUB resmi web sitesi. Bedava Türkçe altyazılı, HD ve amatör video içerikleri.">
+    
+    <link rel="preconnect" href="https://voe.sx" crossorigin>
+    <link rel="dns-prefetch" href="https://voe.sx">
+    <link rel="preconnect" href="https://playmogo.com" crossorigin>
+    <link rel="dns-prefetch" href="https://playmogo.com">
+
     <style>
         :root {
             --primary: #ff7f50;
             --primary-hover: #ff6348;
+            --of-blue: #00aff0;
+            --gold: #ffd700;
             --bg-dark: #08080c;
-            --card-bg: #12121a;
+            --card-bg: rgba(18, 18, 26, 0.95);
             --card-border: rgba(255, 127, 80, 0.22);
             --text-main: #ffffff;
             --text-sub: #9e9ea8;
+            --glass: rgba(12, 12, 18, 0.96);
             --input-bg: rgba(255, 255, 255, 0.07);
+            --hub-text-color: #ffffff;
         }
 
         body.light-theme {
@@ -22,80 +33,180 @@
             --card-border: rgba(255, 127, 80, 0.25);
             --text-main: #111111;
             --text-sub: #555566;
+            --glass: rgba(255, 255, 255, 0.98);
             --input-bg: #e2e4ea;
+            --hub-text-color: #111111;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-        body { background-color: var(--bg-dark); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; min-height: 100vh; padding-bottom: 50px; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; min-height: 100vh; padding-bottom: 60px; transition: background-color 0.3s, color 0.3s; overflow-x: hidden; }
 
-        .header-bar { width: 100%; background: var(--card-bg); border-bottom: 1px solid var(--card-border); position: sticky; top: 0; z-index: 100; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+        @media print { body { display: none !important; } }
+
+        .header-bar { width: 100%; background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--card-border); position: sticky; top: 0; z-index: 1000; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 25px rgba(0,0,0,0.5); }
         .header-left { display: flex; align-items: center; gap: 14px; }
-        .header-logo { font-size: 20px; font-weight: 900; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+        .header-logo { font-size: 22px; font-weight: 900; cursor: pointer; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px; user-select: none; }
         .logo-fox { color: var(--primary); }
-        .logo-hub { color: var(--text-main); }
+        .logo-hub { color: var(--hub-text-color); }
+        .fox-icon { font-size: 24px; }
 
-        .menu-btn, .icon-btn { background: var(--input-bg); border: 1px solid var(--card-border); color: var(--text-main); padding: 8px 12px; border-radius: 10px; cursor: pointer; font-size: 16px; }
-        .action-btn { background: var(--primary); color: #fff; border: none; padding: 10px 18px; border-radius: 20px; font-weight: 800; font-size: 12px; cursor: pointer; }
+        .menu-btn { background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-main); padding: 8px 14px; border-radius: 12px; cursor: pointer; font-size: 18px; transition: 0.2s; display: flex; align-items: center; justify-content: center; }
+        .menu-btn:hover { background: var(--primary); color: #fff; box-shadow: 0 0 15px rgba(255,127,80,0.4); }
 
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 15px; }
+        .header-right { display: flex; align-items: center; gap: 10px; }
+        .action-btn { background: var(--primary); color: #fff; border: none; padding: 9px 18px; border-radius: 20px; font-weight: 800; font-size: 12px; cursor: pointer; transition: 0.2s; position: relative; z-index: 10; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+        .action-btn:hover { background: var(--primary-hover); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(255,127,80,0.3); }
 
-        .video-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 15px; }
+        .icon-btn { background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-main); width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative; font-size: 16px; transition: 0.2s; }
+        .icon-btn:hover { border-color: var(--primary); transform: scale(1.05); }
+
+        .user-chip { display: flex; align-items: center; gap: 8px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 4px 12px 4px 6px; border-radius: 25px; cursor: pointer; transition: 0.2s; }
+        .user-chip:hover { border-color: var(--primary); }
+        .user-avatar-chip { width: 28px; height: 28px; border-radius: 50%; background-size: cover; background-position: center; border: 1.5px solid var(--primary); }
+        .user-name-tag { font-size: 12px; font-weight: bold; max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+        .search-section { width: 100%; max-width: 1200px; margin: 15px auto 0 auto; padding: 0 15px; }
+        .search-box { width: 100%; background: var(--input-bg); border: 1px solid var(--card-border); border-radius: 30px; padding: 13px 22px; color: var(--text-main); font-size: 14px; outline: none; backdrop-filter: blur(8px); transition: 0.3s; }
+        .search-box:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(255, 127, 80, 0.35); }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px 15px; }
+
+        .hero-banner {
+            width: 100%; height: 250px; border-radius: 22px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(8,8,12,0.96) 100%), url('https://i.postimg.cc/MvPphmvC/2.jpg') center/cover no-repeat;
+            display: flex; align-items: flex-end; padding: 22px; margin-bottom: 25px; border: 1px solid var(--card-border);
+            position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+        .hero-badge { position: absolute; top: 16px; left: 16px; background: var(--primary); color: #fff; padding: 5px 14px; border-radius: 12px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; box-shadow: 0 4px 12px rgba(255,127,80,0.4); }
+        .hero-content { z-index: 2; max-width: 650px; }
+        .hero-title { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 8px; text-shadow: 0 2px 10px rgba(0,0,0,0.9); }
+        .hero-btns { display: flex; gap: 10px; margin-top: 14px; }
+
+        .top-channels-sec { margin-bottom: 25px; }
+        .sec-title { font-size: 16px; font-weight: 800; color: var(--primary); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+        .channels-scroll { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
+        .channels-scroll::-webkit-scrollbar { display: none; }
+        
+        .channel-card-mini { display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; min-width: 85px; transition: transform 0.2s; }
+        .channel-card-mini:hover { transform: translateY(-4px); }
+        .channel-mini-img { width: 62px; height: 62px; border-radius: 50%; background-size: cover; background-position: center; border: 2px solid var(--primary); box-shadow: 0 4px 12px rgba(255, 127, 80, 0.3); }
+        .channel-mini-name { font-size: 11px; font-weight: 700; color: var(--text-main); text-align: center; white-space: nowrap; display: flex; align-items: center; gap: 3px; }
+
+        .categories-scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: none; }
+        .categories-scroll::-webkit-scrollbar { display: none; }
+        .cat-chip { background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-sub); padding: 9px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: 0.2s; }
+        .cat-chip:hover, .cat-chip.active { background: var(--primary); color: #fff; border-color: var(--primary); box-shadow: 0 4px 12px rgba(255,127,80,0.3); }
+
+        .video-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         @media (min-width: 768px) { .video-grid { grid-template-columns: repeat(3, 1fr); } }
 
-        .video-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; overflow: hidden; }
-        .thumb-box { position: relative; width: 100%; padding-bottom: 56.25%; background-color: #000; background-size: cover; background-position: center; }
-        .hd-tag { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.85); color: var(--primary); border: 1px solid var(--primary); font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 4px; }
-        .card-info { padding: 12px; font-size: 13px; font-weight: 700; }
+        .video-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; overflow: hidden; transition: transform 0.25s ease, box-shadow 0.25s ease; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between; }
+        .video-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255, 127, 80, 0.28); border-color: rgba(255, 127, 80, 0.5); }
+        .thumb-box { position: relative; width: 100%; padding-bottom: 56.25%; background-color: #000; background-size: cover; background-position: center; cursor: pointer; }
+        .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 48px; height: 48px; background: rgba(255, 127, 80, 0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px rgba(255,127,80,0.6); transition: 0.2s; }
+        .video-card:hover .play-icon { transform: translate(-50%, -50%) scale(1.1); }
+        .play-icon::after { content: ""; border-style: solid; border-width: 7px 0 7px 12px; border-color: transparent transparent transparent #fff; margin-left: 3px; }
+        .hd-tag { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.85); color: #ff7f50; border: 1px solid #ff7f50; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 5px; }
+        
+        .card-info { padding: 15px; }
+        .card-title { font-size: 14px; font-weight: 700; color: var(--text-main); margin-bottom: 10px; line-height: 1.4; cursor: pointer; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .card-meta { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-sub); }
+        
+        .authors-group-horizontal { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .author-info { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 12px; font-weight: 600; vertical-align: middle; }
+        .author-img { width: 24px; height: 24px; border-radius: 50%; background-size: cover; background-position: center; border: 1px solid var(--primary); flex-shrink: 0; }
+        .author-name-text { display: inline-flex; align-items: center; gap: 4px; line-height: 1; }
 
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px; }
-        .modal-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; width: 100%; max-width: 380px; padding: 24px; text-align: center; }
-        .form-input { width: 100%; background: var(--input-bg); border: 1px solid var(--card-border); color: var(--text-main); padding: 12px; border-radius: 10px; font-size: 13px; outline: none; margin-bottom: 10px; }
+        .badge-item { position: relative; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; vertical-align: middle; }
+        .yellow-tick { width: 15px; height: 15px; background: #ffd700; color: #000; border-radius: 50%; font-size: 9px; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; }
+        .blue-tick { width: 15px; height: 15px; background: #0088cc; color: #fff; border-radius: 50%; font-size: 9px; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; }
+
+        #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 2000; display: none; }
+        #menu-drawer { 
+            position: fixed; top: 0; left: -330px; width: 330px; height: 100%; 
+            background: linear-gradient(180deg, rgba(14, 14, 20, 0.98) 0%, rgba(8, 8, 12, 0.99) 100%); 
+            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); z-index: 3000; 
+            transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1); border-right: 1px solid rgba(255, 127, 80, 0.3); 
+            padding: 22px 18px; overflow-y: auto; box-shadow: 15px 0 40px rgba(0,0,0,0.85);
+        }
+        #menu-drawer.open { left: 0; }
+
+        .drawer-top-bar { display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(255,127,80,0.15); }
+        .drawer-brand-box { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 900; }
+        .drawer-close-btn { background: var(--input-bg); border: 1px solid var(--card-border); color: var(--text-sub); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: 0.2s; }
+        .drawer-close-btn:hover { background: var(--primary); color: #fff; transform: rotate(90deg); }
+
+        .drawer-user-card { background: linear-gradient(135deg, rgba(255, 127, 80, 0.15) 0%, rgba(0, 0, 0, 0.4) 100%); border: 1px solid var(--card-border); border-radius: 16px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; margin-bottom: 20px; cursor: pointer; transition: 0.2s; }
+        .drawer-user-card:hover { border-color: var(--primary); background: rgba(255, 127, 80, 0.25); }
+        .drawer-avatar { width: 44px; height: 44px; border-radius: 50%; background-size: cover; background-position: center; border: 2px solid var(--primary); flex-shrink: 0; }
+
+        .drawer-section-title { font-size: 11px; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1.2px; margin: 16px 0 10px 6px; display: flex; align-items: center; gap: 6px; }
+        .drawer-nav-item { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; border-radius: 12px; font-size: 13.5px; font-weight: 700; color: var(--text-main); cursor: pointer; margin-bottom: 6px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s ease; }
+        .drawer-nav-item:hover { background: rgba(255, 127, 80, 0.18); border-color: rgba(255, 127, 80, 0.4); color: #fff; transform: translateX(5px); }
+        .drawer-chip-tag { font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 10px; background: var(--input-bg); color: var(--text-sub); }
+
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 9999999 !important; display: none; align-items: center; justify-content: center; padding: 20px; pointer-events: auto; }
+        .modal-card { background: var(--glass); border: 1px solid var(--card-border); border-radius: 22px; width: 100%; max-width: 420px; padding: 26px; text-align: center; position: relative; color: var(--text-main); max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.95); z-index: 10000000 !important; pointer-events: auto; }
+        .modal-close { position: absolute; top: 16px; right: 16px; color: var(--text-sub); font-size: 20px; cursor: pointer; transition: 0.2s; }
+        .modal-close:hover { color: var(--primary); }
+        .form-input { width: 100%; background: var(--input-bg); border: 1px solid var(--card-border); color: var(--text-main); padding: 12px; border-radius: 10px; font-size: 13px; outline: none; margin-bottom: 12px; transition: 0.2s; }
+        .form-input:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(255,127,80,0.2); }
+
+        .auth-tabs { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px; }
+        .auth-tab { flex: 1; padding: 10px; font-weight: bold; font-size: 14px; color: var(--text-sub); cursor: pointer; border-radius: 10px; transition: 0.2s; }
+        .auth-tab.active { color: #fff; background: var(--primary); }
+
+        .channel-banner { width: 100%; height: 190px; background: linear-gradient(135deg, #1e1e24 0%, #2a0845 50%, #ff7f50 100%); border-radius: 20px 20px 0 0; position: relative; background-size: cover; background-position: center; }
+        .channel-header-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 0 0 20px 20px; padding: 0 20px 20px 20px; position: relative; margin-bottom: 20px; }
+        .channel-profile-row { display: flex; align-items: flex-end; justify-content: space-between; margin-top: -50px; flex-wrap: wrap; gap: 15px; margin-bottom: 15px; }
+        .channel-avatar-lg { width: 100px; height: 100px; border-radius: 50%; border: 4px solid var(--bg-dark); background-size: cover; background-position: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5); background-color: #111; }
+        .channel-stats-bar { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px; margin-bottom: 12px; }
+        .channel-stat-chip { background: var(--input-bg); border: 1px solid var(--card-border); padding: 5px 12px; border-radius: 20px; font-size: 12px; color: var(--text-sub); font-weight: 600; display: flex; align-items: center; gap: 5px; }
+        .channel-tabs { display: flex; gap: 10px; border-bottom: 1px solid var(--card-border); margin-bottom: 20px; overflow-x: auto; scrollbar-width: none; }
+        .channel-tab { padding: 10px 18px; font-weight: 700; font-size: 13px; color: var(--text-sub); cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; transition: 0.2s; }
+        .channel-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+        .page-sec { display: none; flex-direction: column; gap: 16px; }
+        .active-sec { display: flex !important; }
+        .player-box { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.7); }
+        .player-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .back-btn { align-self: flex-start; background: var(--card-bg); color: var(--primary); border: 1px solid var(--card-border); padding: 9px 18px; border-radius: 12px; cursor: pointer; font-weight: bold; font-size: 13px; transition: 0.2s; }
+        .back-btn:hover { background: var(--primary); color: #fff; }
     </style>
 </head>
 <body>
 
-    <!-- 18+ Yaş Modalı -->
-    <div id="age-modal" class="modal-overlay">
-        <div class="modal-card" style="border: 2px solid var(--primary);">
-            <div style="background:var(--primary); color:#fff; font-weight:900; font-size:20px; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 14px auto;">18+</div>
-            <h2 style="font-size:18px; margin-bottom:8px;">Yetişkin İçerik Uyarısı</h2>
-            <p style="font-size:12px; color:var(--text-sub); line-height:1.4; margin-bottom:20px;">Bu platform yetişkinlere yönelik içerikler barındırmaktadır. 18 yaşından büyük olduğunuzu onaylayın.</p>
-            <button class="action-btn" onclick="acceptAge()" style="width:100%; padding:12px; margin-bottom:8px;">18 Yaşından Büyüğüm</button>
-            <button onclick="window.location.href='https://www.google.com'" style="background:transparent; color:var(--text-sub); border:none; font-size:11px; cursor:pointer; padding:6px;">Ayrıl</button>
-        </div>
-    </div>
-
-    <!-- Üst Menü -->
-    <div class="header-bar">
-        <div class="header-left">
-            <div class="header-logo">
-                <span>🦊</span>
-                <span class="logo-fox">FOX</span><span class="logo-hub">HUB</span>
+    <div id="auth-modal" class="modal-overlay">
+        <div class="modal-card">
+            <span class="modal-close" onclick="closeAuthModal()">✕</span>
+            <div class="auth-tabs">
+                <div class="auth-tab active" id="tab-login" onclick="switchAuthTab('login')">Giriş Yap</div>
+                <div class="auth-tab" id="tab-register" onclick="switchAuthTab('register')">Kayıt Ol</div>
             </div>
-        </div>
-        <div>
-            <button class="action-btn" onclick="alert('Kayıt ekranı')">Kayıt Ol</button>
+
+            <form id="form-login" onsubmit="handleLogin(event)">
+                <input type="email" id="login-email" class="form-input" placeholder="E-posta adresiniz" required autocomplete="username">
+                <input type="password" id="login-password" class="form-input" placeholder="Şifreniz" required autocomplete="current-password">
+                <button type="submit" class="action-btn" style="width:100%; padding:12px; margin-top:10px;">Giriş Yap</button>
+            </form>
+
+            <form id="form-register" style="display:none;" onsubmit="handleRegister(event)">
+                <input type="text" id="reg-username" class="form-input" placeholder="Kullanıcı Adı" required>
+                <input type="email" id="reg-email" class="form-input" placeholder="E-posta Adresi" required>
+                <input type="password" id="reg-password" class="form-input" placeholder="Şifre Oluşturun" required>
+                <button type="submit" class="action-btn" style="width:100%; padding:12px; margin-top:10px;">Hesap Oluştur & Giriş Yap</button>
+            </form>
         </div>
     </div>
 
-    <!-- İçerik Alanı -->
-    <div class="container">
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="thumb-box" style="background-image: url('https://i.postimg.cc/MvPphmvC/2.jpg');">
-                    <div class="hd-tag">HD</div>
-                </div>
-                <div class="card-info">
-                    Sophie Rain Soyunup Dildo Üzerinde Krem Şanti Yiyor
-                </div>
-            </div>
+    <div id="profile-modal" class="modal-overlay">
+        <div class="modal-card">
+            <span class="modal-close" onclick="closeProfileModal()">✕</span>
+            <div id="modal-user-avatar" style="width:75px; height:75px; border-radius:50%; background-size:cover; background-position:center; border:2px solid var(--primary); margin:0 auto 12px auto;"></div>
+            <h3 id="modal-user-name" style="margin-bottom:6px; font-size:18px;"></h3>
+            <p id="modal-user-email" style="font-size:12px; color:var(--text-sub); margin-bottom:15px;"></p>
+            <div id="modal-user-badge-box" style="margin-bottom:20px;"></div>
+            <button onclick="handleLogout()" class="action-btn" style="width:100%; background:transparent; border:1px solid var(--primary); color:var(--primary);">🚪 Oturumu Kapat</button>
         </div>
     </div>
-
-    <script>
-        function acceptAge() {
-            document.getElementById('age-modal').style.display = 'none';
-        }
-    </script>
-</body>
-</html>
+    
