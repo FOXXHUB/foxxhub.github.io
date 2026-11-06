@@ -60,11 +60,6 @@
         .icon-btn { background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-main); width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative; font-size: 16px; transition: 0.2s; }
         .icon-btn:hover { border-color: var(--primary); transform: scale(1.05); }
 
-        .user-chip { display: flex; align-items: center; gap: 8px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 4px 12px 4px 6px; border-radius: 25px; cursor: pointer; transition: 0.2s; }
-        .user-chip:hover { border-color: var(--primary); }
-        .user-avatar-chip { width: 28px; height: 28px; border-radius: 50%; background-size: cover; background-position: center; border: 1.5px solid var(--primary); }
-        .user-name-tag { font-size: 12px; font-weight: bold; max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
         .search-section { width: 100%; max-width: 1200px; margin: 15px auto 0 auto; padding: 0 15px; }
         .search-box { width: 100%; background: var(--input-bg); border: 1px solid var(--card-border); border-radius: 30px; padding: 13px 22px; color: var(--text-main); font-size: 14px; outline: none; backdrop-filter: blur(8px); transition: 0.3s; }
         .search-box:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(255, 127, 80, 0.35); }
@@ -80,22 +75,6 @@
         .hero-badge { position: absolute; top: 16px; left: 16px; background: var(--primary); color: #fff; padding: 5px 14px; border-radius: 12px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; box-shadow: 0 4px 12px rgba(255,127,80,0.4); }
         .hero-content { z-index: 2; max-width: 650px; }
         .hero-title { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 8px; text-shadow: 0 2px 10px rgba(0,0,0,0.9); }
-        .hero-btns { display: flex; gap: 10px; margin-top: 14px; }
-
-        .top-channels-sec { margin-bottom: 25px; }
-        .sec-title { font-size: 16px; font-weight: 800; color: var(--primary); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-        .channels-scroll { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
-        .channels-scroll::-webkit-scrollbar { display: none; }
-        
-        .channel-card-mini { display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; min-width: 85px; transition: transform 0.2s; }
-        .channel-card-mini:hover { transform: translateY(-4px); }
-        .channel-mini-img { width: 62px; height: 62px; border-radius: 50%; background-size: cover; background-position: center; border: 2px solid var(--primary); box-shadow: 0 4px 12px rgba(255, 127, 80, 0.3); }
-        .channel-mini-name { font-size: 11px; font-weight: 700; color: var(--text-main); text-align: center; white-space: nowrap; display: flex; align-items: center; gap: 3px; }
-
-        .categories-scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: none; }
-        .categories-scroll::-webkit-scrollbar { display: none; }
-        .cat-chip { background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-sub); padding: 9px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: 0.2s; }
-        .cat-chip:hover, .cat-chip.active { background: var(--primary); color: #fff; border-color: var(--primary); box-shadow: 0 4px 12px rgba(255,127,80,0.3); }
 
         .video-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         @media (min-width: 768px) { .video-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -110,17 +89,7 @@
         
         .card-info { padding: 15px; }
         .card-title { font-size: 14px; font-weight: 700; color: var(--text-main); margin-bottom: 10px; line-height: 1.4; cursor: pointer; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .card-meta { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-sub); }
         
-        .authors-group-horizontal { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-        .author-info { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 12px; font-weight: 600; vertical-align: middle; }
-        .author-img { width: 24px; height: 24px; border-radius: 50%; background-size: cover; background-position: center; border: 1px solid var(--primary); flex-shrink: 0; }
-        .author-name-text { display: inline-flex; align-items: center; gap: 4px; line-height: 1; }
-
-        .badge-item { position: relative; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; vertical-align: middle; }
-        .yellow-tick { width: 15px; height: 15px; background: #ffd700; color: #000; border-radius: 50%; font-size: 9px; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; }
-        .blue-tick { width: 15px; height: 15px; background: #0088cc; color: #fff; border-radius: 50%; font-size: 9px; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; }
-
         #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 2000; display: none; }
         #menu-drawer { 
             position: fixed; top: 0; left: -330px; width: 330px; height: 100%; 
@@ -140,7 +109,7 @@
         .drawer-user-card:hover { border-color: var(--primary); background: rgba(255, 127, 80, 0.25); }
         .drawer-avatar { width: 44px; height: 44px; border-radius: 50%; background-size: cover; background-position: center; border: 2px solid var(--primary); flex-shrink: 0; }
 
-        .drawer-section-title { font-size: 11px; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1.2px; margin: 16px 0 10px 6px; display: flex; align-items: center; gap: 6px; }
+        .drawer-section-title { font-size: 11px; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1.2px; margin: 16px 0 10px 6px; }
         .drawer-nav-item { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; border-radius: 12px; font-size: 13.5px; font-weight: 700; color: var(--text-main); cursor: pointer; margin-bottom: 6px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s ease; }
         .drawer-nav-item:hover { background: rgba(255, 127, 80, 0.18); border-color: rgba(255, 127, 80, 0.4); color: #fff; transform: translateX(5px); }
         .drawer-chip-tag { font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 10px; background: var(--input-bg); color: var(--text-sub); }
@@ -156,33 +125,19 @@
         .auth-tab { flex: 1; padding: 10px; font-weight: bold; font-size: 14px; color: var(--text-sub); cursor: pointer; border-radius: 10px; transition: 0.2s; }
         .auth-tab.active { color: #fff; background: var(--primary); }
 
-        .channel-banner { width: 100%; height: 190px; background: linear-gradient(135deg, #1e1e24 0%, #2a0845 50%, #ff7f50 100%); border-radius: 20px 20px 0 0; position: relative; background-size: cover; background-position: center; }
-        .channel-header-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 0 0 20px 20px; padding: 0 20px 20px 20px; position: relative; margin-bottom: 20px; }
-        .channel-profile-row { display: flex; align-items: flex-end; justify-content: space-between; margin-top: -50px; flex-wrap: wrap; gap: 15px; margin-bottom: 15px; }
-        .channel-avatar-lg { width: 100px; height: 100px; border-radius: 50%; border: 4px solid var(--bg-dark); background-size: cover; background-position: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5); background-color: #111; }
-        .channel-stats-bar { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px; margin-bottom: 12px; }
-        .channel-stat-chip { background: var(--input-bg); border: 1px solid var(--card-border); padding: 5px 12px; border-radius: 20px; font-size: 12px; color: var(--text-sub); font-weight: 600; display: flex; align-items: center; gap: 5px; }
-        .channel-tabs { display: flex; gap: 10px; border-bottom: 1px solid var(--card-border); margin-bottom: 20px; overflow-x: auto; scrollbar-width: none; }
-        .channel-tab { padding: 10px 18px; font-weight: 700; font-size: 13px; color: var(--text-sub); cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; transition: 0.2s; }
-        .channel-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
-
         .page-sec { display: none; flex-direction: column; gap: 16px; }
         .active-sec { display: flex !important; }
-        .player-box { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.7); }
-        .player-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .back-btn { align-self: flex-start; background: var(--card-bg); color: var(--primary); border: 1px solid var(--card-border); padding: 9px 18px; border-radius: 12px; cursor: pointer; font-weight: bold; font-size: 13px; transition: 0.2s; }
-        .back-btn:hover { background: var(--primary); color: #fff; }
     </style>
 </head>
 <body>
 
     <div id="age-modal" class="modal-overlay" style="display:flex;">
-        <div class="modal-card" style="border: 2px solid var(--primary); pointer-events: auto;">
+        <div class="modal-card" style="border: 2px solid var(--primary);">
             <div style="background:var(--primary); color:#fff; font-weight:900; font-size:22px; width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px auto; box-shadow:0 0 15px rgba(255,127,80,0.5);">18+</div>
             <h2 style="font-size:19px; margin-bottom:10px;">Yetişkin İçerik Uyarısı</h2>
             <p style="font-size:13px; color:var(--text-sub); line-height:1.5; margin-bottom:22px;">Bu platform yetişkinlere yönelik içerikler barındırmaktadır. Devam edebilmek için 18 yaşından büyük olduğunuzu onaylamanız gerekmektedir.</p>
-            <button class="action-btn" id="btn-age-accept" onclick="acceptAgeWarning()" style="width:100%; padding:14px; font-size:14px; cursor:pointer; position:relative; z-index:10000001;">18 Yaşından Büyüğüm (Giriş Yap)</button>
-            <button id="btn-age-decline" onclick="declineAgeWarning()" style="background:transparent; color:var(--text-sub); border:none; padding:10px; font-size:12px; cursor:pointer; margin-top:10px; position:relative; z-index:10000001;">Ayrıl (18 Yaşından Küçüğüm)</button>
+            <button class="action-btn" onclick="acceptAgeWarning()" style="width:100%; padding:14px; font-size:14px; cursor:pointer;">18 Yaşından Büyüğüm (Giriş Yap)</button>
+            <button onclick="declineAgeWarning()" style="background:transparent; color:var(--text-sub); border:none; padding:10px; font-size:12px; cursor:pointer; margin-top:10px;">Ayrıl (18 Yaşından Küçüğüm)</button>
         </div>
     </div>
 
@@ -202,775 +157,141 @@
 
             <form id="form-register" style="display:none;" onsubmit="handleRegister(event)">
                 <input type="text" id="reg-username" class="form-input" placeholder="Kullanıcı Adı" required>
-                <input type="email" id="reg-email" class="form-input" placeholder="E-posta Adresi" required>
-                <input type="password" id="reg-password" class="form-input" placeholder="Şifre Oluşturun" required>
-                <button type="submit" class="action-btn" style="width:100%; padding:12px; margin-top:10px;">Hesap Oluştur & Giriş Yap</button>
+                <input type="email" id="reg-email" class="form-input" placeholder="E-posta adresiniz" required>
+                <input type="password" id="reg-password" class="form-input" placeholder="Şifre belirleyin" required>
+                <button type="submit" class="action-btn" style="width:100%; padding:12px; margin-top:10px;">Kayıt Ol</button>
             </form>
-        </div>
-    </div>
-
-    <div id="profile-modal" class="modal-overlay">
-        <div class="modal-card">
-            <span class="modal-close" onclick="closeProfileModal()">✕</span>
-            <div id="modal-user-avatar" style="width:75px; height:75px; border-radius:50%; background-size:cover; background-position:center; border:2px solid var(--primary); margin:0 auto 12px auto;"></div>
-            <h3 id="modal-user-name" style="margin-bottom:6px; font-size:18px;"></h3>
-            <p id="modal-user-email" style="font-size:12px; color:var(--text-sub); margin-bottom:15px;"></p>
-            <div id="modal-user-badge-box" style="margin-bottom:20px;"></div>
-            <button onclick="handleLogout()" class="action-btn" style="width:100%; background:transparent; border:1px solid var(--primary); color:var(--primary);">🚪 Oturumu Kapat</button>
         </div>
     </div>
 
     <div class="header-bar">
         <div class="header-left">
-            <button class="menu-btn" onclick="openDrawer()">☰</button>
-            <div class="header-logo" onclick="goHome()">
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <div class="header-logo" onclick="switchPage('home')">
                 <span class="fox-icon">🦊</span>
                 <span class="logo-fox">FOX</span><span class="logo-hub">HUB</span>
             </div>
         </div>
         <div class="header-right">
-            <button class="icon-btn" id="btn-toggle-theme" onclick="toggleTheme()">☀️</button>
-            
-            <div id="auth-logged-out">
-                <button class="action-btn" onclick="openAuthModal()">Giriş / Kayıt</button>
-            </div>
-
-            <div id="auth-logged-in" style="display:none;">
-                <div class="user-chip" onclick="openProfileModal()">
-                    <div class="user-avatar-chip" id="user-chip-avatar"></div>
-                    <span class="user-name-tag" id="user-chip-name"></span>
-                    <span id="user-chip-tick"></span>
-                </div>
-            </div>
+            <button class="action-btn" onclick="openAuthModal('register')">Kayıt Ol</button>
+            <div class="icon-btn" onclick="toggleTheme()" id="theme-icon">🌙</div>
         </div>
     </div>
 
-    <div id="menu-overlay" onclick="closeDrawer()"></div>
+    <div id="menu-overlay" onclick="toggleMenu()"></div>
     <div id="menu-drawer">
         <div class="drawer-top-bar">
             <div class="drawer-brand-box">
-                <span>🦊</span>
-                <span style="color:#ff7f50;">FOX</span><span style="color:var(--hub-text-color);">HUB</span>
+                <span>🦊</span> <span class="logo-fox">FOX</span><span class="logo-hub">HUB</span>
             </div>
-            <div class="drawer-close-btn" onclick="closeDrawer()">✕</div>
+            <div class="drawer-close-btn" onclick="toggleMenu()">✕</div>
         </div>
-
-        <div class="drawer-user-card" id="drawer-user-box" onclick="handleDrawerUserClick()">
-            <div class="drawer-avatar" id="drawer-user-avatar" style="background-image:url('https://cdn-icons-png.flaticon.com/512/847/847969.png');"></div>
+        <div class="drawer-user-card" onclick="openAuthModal('login')">
+            <div class="drawer-avatar" style="background-image: url('https://i.postimg.cc/MvPphmvC/2.jpg');"></div>
             <div>
-                <div id="drawer-user-name" style="font-size:13.5px; font-weight:bold;">Giriş Yapılmadı</div>
-                <div id="drawer-user-status" style="font-size:11px; color:var(--text-sub);">Oturum açmak için tıklayın</div>
+                <div style="font-size: 13px; font-weight: 800;">Misafir Kullanıcı</div>
+                <div style="font-size: 11px; color: var(--text-sub);">Giriş yapmak için dokun</div>
             </div>
         </div>
-
-        <div class="drawer-section-title">⭐ Öne Çıkan Modeller</div>
-        <div class="drawer-nav-item" onclick="openProfile('comatozze'); closeDrawer();">
-            <span>🏆 comatozze</span>
-            <span class="drawer-chip-tag" style="color:#ffd700;">Ödüllü</span>
-        </div>
-        <div class="drawer-nav-item" onclick="openProfile('Aishah Sofey'); closeDrawer();">
-            <span>✨ Aishah Sofey</span>
-            <span class="drawer-chip-tag" style="color:#00aff0;">Model ✓</span>
-        </div>
-        <div class="drawer-nav-item" onclick="openProfile('Sophie Rain'); closeDrawer();">
-            <span>🔥 Sophie Rain</span>
-            <span class="drawer-chip-tag" style="color:#ff7f50;">Trend</span>
-        </div>
-        <div class="drawer-nav-item" onclick="openProfile('Sweetie Fox'); closeDrawer();">
-            <span>👑 Sweetie Fox</span>
-            <span class="drawer-chip-tag" style="color:#ff7f50;">Popüler</span>
-        </div>
-
-        <div class="drawer-section-title">📁 İçerik Kategorileri</div>
-        <div class="drawer-nav-item" onclick="selectDrawerCat('all')">
-            <span>🔥 Tüm Videolar</span>
-            <span class="drawer-chip-tag">Hepsi</span>
-        </div>
-        <div class="drawer-nav-item" onclick="selectDrawerCat('sub')">
-            <span>🇹🇷 Türkçe Altyazılı</span>
-            <span class="drawer-chip-tag" style="color:#00ff88;">TR</span>
-        </div>
-        <div class="drawer-nav-item" onclick="selectDrawerCat('amateur')">
-            <span>🏠 Amatör İçerik</span>
-            <span class="drawer-chip-tag">Ev Yapımı</span>
-        </div>
-        <div class="drawer-nav-item" onclick="selectDrawerCat('mom')">
-            <span>👩‍👧‍👦 Anne Kategorisi</span>
-            <span class="drawer-chip-tag">Özel</span>
-        </div>
-        <div class="drawer-nav-item" onclick="selectDrawerCat('sibling')">
-            <span>👧 Kardeş Kurgu</span>
-            <span class="drawer-chip-tag">Popüler</span>
-        </div>
-        <div class="drawer-nav-item" onclick="selectDrawerCat('bath')">
-            <span>🛁 Banyo Şovları</span>
-            <span class="drawer-chip-tag">HD</span>
-        </div>
-        <div class="drawer-nav-item" onclick="selectDrawerCat('fullhd')">
-            <span>🎬 Full HD 1080p</span>
-            <span class="drawer-chip-tag" style="color:#ffd700;">4K</span>
-        </div>
-        <div class="drawer-nav-item" onclick="selectDrawerCat('lesbian')">
-            <span>👭 Lezbiyen İkili</span>
-            <span class="drawer-chip-tag">Çift</span>
+        <div class="drawer-section-title">Menü</div>
+        <div class="drawer-nav-item" onclick="switchPage('home'); toggleMenu();">
+            <span>Ana Sayfa</span>
+            <span class="drawer-chip-tag">Ana</span>
         </div>
     </div>
 
-    <div class="search-section">
-        <input type="text" id="search-input" class="search-box" placeholder="🔍 Video, etiket veya kanal ara..." oninput="handleSearch(this.value)">
-    </div>
-
-    <div class="container">
-        <div id="sec-feed" class="page-sec active-sec">
-            
+    <div class="container page-sec active-sec" id="page-home">
+        <div class="search-section">
+            <input type="text" class="search-box" placeholder="Video veya kanal ara..." id="search-input">
+        </div>
+        <div class="container">
             <div class="hero-banner">
-                <span class="hero-badge">🔥 Günün Öne Çıkanı</span>
+                <div class="hero-badge">Öne Çıkan</div>
                 <div class="hero-content">
-                    <h2 class="hero-title">Sophie Rain Soyunup Dildo Üzerinde Krem Şanti Yiyor</h2>
-                    <p style="font-size:12px; color:#d0d0e0; margin-bottom:10px;">Sophie Rain kanalından en yeni, cesur ve büyüleyici özel fantezi şovu.</p>
-                    <div class="hero-btns">
-                        <button class="action-btn" onclick="playVideo('v9')">▶ Ücretsiz İzle</button>
-                        <button class="action-btn" style="background:rgba(255,255,255,0.15); border:1px solid var(--card-border);" onclick="openProfile('Sophie Rain')">👤 Kanala Git</button>
+                    <div class="hero-title">FOXHUB Canlı ve HD İçerikler</div>
+                </div>
+            </div>
+            <div class="video-grid" id="video-grid-container">
+                <div class="video-card">
+                    <div class="thumb-box" style="background-image: url('https://i.postimg.cc/MvPphmvC/2.jpg');">
+                        <div class="hd-tag">HD</div>
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Sophie Rain Soyunup Dildo Üzerinde Krem Şanti Yiyor</div>
                     </div>
                 </div>
             </div>
-
-            <div class="top-channels-sec">
-                <div class="sec-title">⭐ Öne Çıkan Modeller & Kanallar</div>
-                <div class="channels-scroll">
-                    <div class="channel-card-mini" onclick="openProfile('comatozze')">
-                        <div class="channel-mini-img" style="background-image:url('https://ei.phncdn.com/pics/users/0024/5807/0141/avatar95302765/(m=ewILGCjadOf)(mh=n7tIeIoHniVFwhIe)200x200.jpg'); border-color:#ffd700;"></div>
-                        <span class="channel-mini-name">comatozze <span class="blue-tick">✓</span></span>
-                    </div>
-                    <div class="channel-card-mini" onclick="openProfile('2PBVAGE')">
-                        <div class="channel-mini-img" style="background-image:url('https://cdn.phototourl.com/member/2026-10-15-83266f74-97b3-42ff-82ee-e8e955a628ca.jpg'); border-color:#ffd700;"></div>
-                        <span class="channel-mini-name">2PBVAGE <span class="yellow-tick">✓</span></span>
-                    </div>
-                    <div class="channel-card-mini" onclick="openProfile('Aishah Sofey')">
-                        <div class="channel-mini-img" style="background-image:url('https://static-cdn.jtvnw.net/jtv_user_pictures/e95e4603-8868-4620-970b-f80792268487-profile_image-300x300.png');"></div>
-                        <span class="channel-mini-name">Aishah <span class="blue-tick">✓</span></span>
-                    </div>
-                    <div class="channel-card-mini" onclick="openProfile('Sophie Rain')">
-                        <div class="channel-mini-img" style="background-image:url('https://scontent.cdninstagram.com/v/t51.82787-19/757236652_18031740167954124_3621442071429323987_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=1&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=gn8dFciWLxIQ7kNvwGgkQsb&_nc_oc=Ado8K58AHrIya-rmZrx5X9EmNENQ2K-TGmSbkQSwFq7iMijOj9oiD3n6Etdd3__27fc&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=RmCxMZn-cevPP3FeoOhkSA&_nc_ss=7b689&oh=00_AQNVsiANvtX14dfUC8Qn2MFfKsxy_TTVijSvazdSQrJsuw&oe=6AD92A9E');"></div>
-                        <span class="channel-mini-name">Sophie <span class="blue-tick">✓</span></span>
-                    </div>
-                    <div class="channel-card-mini" onclick="openProfile('Sweetie Fox')">
-                        <div class="channel-mini-img" style="background-image:url('https://ei.phncdn.com/(m=ewILGCjadOf)(mh=59qrk8LnBE3Z9kTL)43ca43da-b27e-42f2-b237-40c5c13261b1.jpg');"></div>
-                        <span class="channel-mini-name">Sweetie <span class="blue-tick">✓</span></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="categories-scroll" id="categories-scroll-bar">
-                <div class="cat-chip active" data-cat="all" onclick="selectCategoryChip(this, 'all')">🔥 Tüm Videolar</div>
-                <div class="cat-chip" data-cat="sub" onclick="selectCategoryChip(this, 'sub')">🇹🇷 Türkçe Altyazılı</div>
-                <div class="cat-chip" data-cat="amateur" onclick="selectCategoryChip(this, 'amateur')">🏠 Amatör</div>
-                <div class="cat-chip" data-cat="mom" onclick="selectCategoryChip(this, 'mom')">👩‍👧‍👦 Anne</div>
-                <div class="cat-chip" data-cat="sibling" onclick="selectCategoryChip(this, 'sibling')">👧 Kardeş</div>
-                <div class="cat-chip" data-cat="bath" onclick="selectCategoryChip(this, 'bath')">🛁 Banyo</div>
-                <div class="cat-chip" data-cat="fullhd" onclick="selectCategoryChip(this, 'fullhd')">🎬 Full HD</div>
-                <div class="cat-chip" data-cat="lesbian" onclick="selectCategoryChip(this, 'lesbian')">👭 Lezbiyen</div>
-            </div>
-
-            <h3 id="cat-title" style="color:var(--primary); margin-bottom:15px;">🔥 Tüm Videolar</h3>
-
-            <div id="skeleton-grid" class="video-grid">
-                <div class="sk-card skeleton"></div>
-                <div class="sk-card skeleton"></div>
-                <div class="sk-card skeleton"></div>
-            </div>
-
-            <div id="real-video-grid" class="video-grid" style="display:none;"></div>
-        </div>
-
-        <div id="sec-watch" class="page-sec">
-            <button class="back-btn" onclick="goHome()">⬅ Ana Sayfaya Dön</button>
-            <h2 id="v-title" style="font-size:18px;"></h2>
-            <div style="font-size:12px; color:var(--text-sub);" id="v-date"></div>
-            <div class="player-box">
-                <iframe id="v-iframe" src="about:blank" loading="eager" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-            </div>
-            
-            <div id="v-author-card" style="background:var(--card-bg); padding:12px 15px; border-radius:12px; border:1px solid var(--card-border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;"></div>
-
-            <div style="background:var(--card-bg); padding:15px; border-radius:12px; border:1px solid var(--card-border);">
-                <div style="font-size:14px; font-weight:bold; color:var(--primary); margin-bottom:8px;">📌 Açıklama & Etiketler</div>
-                <p id="v-desc" style="font-size:13px; line-height:1.5;"></p>
-                <div id="v-tags" style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;"></div>
-            </div>
-        </div>
-
-        <div id="sec-profile" class="page-sec">
-            <button class="back-btn" onclick="goHome()">⬅ Ana Sayfaya Dön</button>
-            
-            <div class="channel-banner" id="p-banner"></div>
-            
-            <div class="channel-header-card">
-                <div class="channel-profile-row">
-                    <div id="p-avatar" class="channel-avatar-lg"></div>
-                </div>
-
-                <h2 id="p-title" style="font-size:20px; font-weight:900; display:flex; align-items:center; gap:6px; flex-wrap:wrap;"></h2>
-                <div id="p-bio" style="font-size:13px; color:var(--text-sub); margin-top:6px; line-height:1.5;"></div>
-
-                <div class="channel-stats-bar" id="p-stats"></div>
-            </div>
-
-            <div class="channel-tabs">
-                <div class="channel-tab active">🎥 Videolar</div>
-                <div class="channel-tab">🔥 Popüler</div>
-                <div class="channel-tab">ℹ️ Hakkında</div>
-            </div>
-
-            <div id="p-videos" class="video-grid"></div>
         </div>
     </div>
 
     <script>
-        var ADSTERRA_SMARTLINK = "https://auctionr.org/4/f52b96b557fb75ab92ceff2ae0017f80";
-
-        function checkAgeStorage() {
-            var isAdult = localStorage.getItem('2pbvage_18plus');
-            var ageModal = document.getElementById('age-modal');
-            if (isAdult === 'true') {
-                if (ageModal) ageModal.style.display = 'none';
-            } else {
-                if (ageModal) ageModal.style.display = 'flex';
-            }
-        }
-
         function acceptAgeWarning() {
-            try {
-                localStorage.setItem('2pbvage_18plus', 'true');
-            } catch(e){}
-            var ageModal = document.getElementById('age-modal');
-            if (ageModal) {
-                ageModal.style.display = 'none';
-            }
+            document.getElementById('age-modal').style.display = 'none';
         }
-
         function declineAgeWarning() {
-            window.location.href = "https://www.google.com";
+            window.location.href = 'https://www.google.com';
         }
-
-        var OWNER_EMAIL = "poyrazre6@gmail.com";
-        var OWNER_PASSWORD = "poyri.2525";
-        var OWNER_USERNAME = "2PBVAGE";
-        var OWNER_AVATAR = "https://cdn.phototourl.com/member/2026-10-15-83266f74-97b3-42ff-82ee-e8e955a628ca.jpg";
-        
-        var AISHAH_AVATAR = "https://static-cdn.jtvnw.net/jtv_user_pictures/e95e4603-8868-4620-970b-f80792268487-profile_image-300x300.png";
-        var SOPHIE_AVATAR = "https://scontent.cdninstagram.com/v/t51.82787-19/757236652_18031740167954124_3621442071429323987_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=1&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=gn8dFciWLxIQ7kNvwGgkQsb&_nc_oc=Ado8K58AHrIya-rmZrx5X9EmNENQ2K-TGmSbkQSwFq7iMijOj9oiD3n6Etdd3__27fc&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=RmCxMZn-cevPP3FeoOhkSA&_nc_ss=7b689&oh=00_AQNVsiANvtX14dfUC8Qn2MFfKsxy_TTVijSvazdSQrJsuw&oe=6AD92A9E";
-        var COMATTOZE_AVATAR = "https://ei.phncdn.com/pics/users/0024/5807/0141/avatar95302765/(m=ewILGCjadOf)(mh=n7tIeIoHniVFwhIe)200x200.jpg";
-        var SWEETIE_AVATAR = "https://ei.phncdn.com/(m=ewILGCjadOf)(mh=59qrk8LnBE3Z9kTL)43ca43da-b27e-42f2-b237-40c5c13261b1.jpg";
-        var DEFAULT_AVATAR = "https://cdn-icons-png.flaticon.com/512/847/847969.png";
-        
-        var AISHAH_BANNER = "https://pbs.twimg.com/profile_banners/1058447870418960384/1784236183/600x200";
-        var COMATTOZE_BANNER = "https://ei.phncdn.com/pics/users/0024/5807/0141/cover31143515/(m=eRSa4qFxcWaAb)(mh=NL_-gLc2D3h9AHS0)1323x270.jpg";
-
-        var yellowTick = '<span class="badge-item" data-tooltip="Resmi Kurucu Hesabı"><span class="yellow-tick">✓</span></span>';
-        var blueTick = '<span class="badge-item" data-tooltip="Doğrulanmış Model"><span class="blue-tick">✓</span></span>';
-        var trophyBadge = '<span class="badge-item" data-tooltip="FoxHub Ödülleri Kazananı"><span class="trophy-badge">🏆</span></span>';
-
-        function getChannelTick(authorName) {
-            var nameLower = authorName.toLowerCase();
-            if (nameLower === OWNER_USERNAME.toLowerCase() || nameLower === OWNER_EMAIL.toLowerCase()) {
-                return yellowTick;
-            }
-            var badges = blueTick;
-            if (nameLower.indexOf("comatozze") > -1 || nameLower.indexOf("sweetie fox") > -1) {
-                badges += ' ' + trophyBadge;
-            }
-            return badges;
+        function openAuthModal(tab) {
+            document.getElementById('auth-modal').style.display = 'flex';
+            switchAuthTab(tab);
         }
-
-        var db = {
-            v9: {
-                title: "Sophie Rain Soyunup Dildo Üzerinde Krem Şanti Yiyor",
-                url: "https://voe.sx/e/vdkex5vzitjh",
-                thumb: "https://i.postimg.cc/MvPphmvC/2.jpg",
-                author: "Sophie Rain",
-                avatar: SOPHIE_AVATAR,
-                date: "23 Ekim 2026",
-                desc: "Sophie Rain kanalından en yeni, cesur ve büyüleyici özel fantezi şovu.",
-                cats: ["amateur", "fullhd", "bath"],
-                tags: ["sophierain", "amatör", "fullhd", "dildo", "kremşanti", "özelşov"]
-            },
-            v8: {
-                title: "Kız Arkadaşımın Annesi Beklenenden Daha Erken Eve Geldi...",
-                url: "https://voe.sx/e/19ocub2our1r",
-                thumb: "https://i.postimg.cc/BQnZXK6q/20261018-144948.jpg",
-                author: "comatozze",
-                avatar: COMATTOZE_AVATAR,
-                date: "18 Ekim 2026",
-                desc: "Comatozze kanalından Türkçe altyazılı, kurgusal ve heyecan dolu en yeni özel gösteri.",
-                cats: ["sub", "fullhd", "mom"],
-                tags: ["comatozze", "türkçealtyazı", "altyazılı", "fullhd", "anne", "kurgu"]
-            },
-            v7: {
-                title: "Aishah Sofey Seksi Fiziğiyle Göz Kamaştırıyor",
-                url: "https://voe.sx/e/jfpwsptrfcor",
-                thumb: "https://pimpbunny.com/contents/videos_screenshots/608000/608532/800x450/1.jpg",
-                author: "Aishah Sofey",
-                avatar: AISHAH_AVATAR,
-                date: "16 Ekim 2026",
-                desc: "Aishah Sofey'in seksi fiziğiyle ekranları şenlendirdiği en yeni özel video gösterisi.",
-                cats: ["amateur", "fullhd"],
-                tags: ["aishahsofey", "amatör", "fullhd", "özelşov", "seksi"]
-            },
-            v6: { 
-                title: "Sıcak Çift Kanepede Tutkulu Bir Şekilde Seks Yapıyor. Comatozze", 
-                url: "https://voe.sx/e/kmnwp6pf63nc", 
-                thumb: "https://pornoanne.com/wp-content/uploads/2026/09/6a9d729c7b598.jpg", 
-                author: "comatozze", 
-                avatar: COMATTOZE_AVATAR, 
-                date: "14 Ekim 2026", 
-                desc: "Comatozze kanalından kanepede geçen tutkulu ve iniltilerle dolu özel amatör video.", 
-                cats: ["amateur", "fullhd"],
-                tags: ["comatozze", "amatör", "kanepede", "tutkulu", "inilti", "fullhd"] 
-            },
-            v5: { 
-                title: "Sophie Rain Seksi Siyah Renk Kıyafetiyle Soyunuyor", 
-                url: "https://voe.sx/e/g3beul38mpw7", 
-                thumb: "https://www.porn4fans.com/contents/videos_screenshots/5000/5268/800x450/1.jpg", 
-                author: "Sophie Rain", 
-                avatar: SOPHIE_AVATAR, 
-                date: "14 Ekim 2026", 
-                desc: "Sophie Rain'in en yeni seksi siyah kıyafetli özel gösterisi.", 
-                cats: ["amateur", "fullhd", "bath"],
-                tags: ["sophierain", "amatör", "fullhd", "banyo", "siyah"] 
-            },
-            v4: { 
-                title: "Tüylü Vajinalı Köylü Kızı Bir Yabancı Tarafından Sikişildi - Sweetie Fox", 
-                url: "https://voe.sx/e/hoshht3fdzl0", 
-                thumb: "https://t3.pixhost.to/thumbs/6399/783546656_162830.jpg", 
-                author: "Sweetie Fox", 
-                avatar: SWEETIE_AVATAR, 
-                date: "13 Ekim 2026", 
-                desc: "Sweetie Fox'un Türkçe altyazılı köylü kızı temalı popüler özel gösterisi.", 
-                cats: ["sub", "fullhd"],
-                tags: ["sweetiefox", "altyazılı", "fullhd", "köylü"] 
-            },
-            v3: { 
-                title: "Sophie Rain Ve Piper Aishah Kamera Karşısında İzleyenleri Şenlendiriyor", 
-                url: "https://playmogo.com/e/xmiqbgo3vrz4", 
-                thumb: "https://pimpbunny.com/contents/videos_screenshots/513000/513225/800x450/39.jpg", 
-                author: "Sophie Rain & Aishah Sofey",
-                isCollab: true,
-                authors: [
-                    { name: "Sophie Rain", avatar: SOPHIE_AVATAR },
-                    { name: "Aishah Sofey", avatar: AISHAH_AVATAR }
-                ],
-                date: "12 Ekim 2026", 
-                desc: "Sophie Rain ve Aishah Sofey kameralar karşısında eğlenceli ve özel ortak şov yaşatıyor.", 
-                cats: ["amateur", "fullhd", "lesbian"],
-                tags: ["sophierain", "aishahsofey", "lezbiyen", "amatör", "fullhd", "collab"] 
-            },
-            v2: { 
-                title: "Arkadaşım markete giderken ben ve arkadaşımın kız arkadaşı yalnız kaldık...", 
-                url: "https://playmogo.com/e/ehhg2pcksir6", 
-                thumb: "https://thumb-cdn77.xvideos-cdn.com/2a1608a1-926f-43a0-88ab-9884148cd7d9/5/xv_30_t.avif", 
-                author: "comatozze", 
-                avatar: COMATTOZE_AVATAR, 
-                date: "12 Ekim 2026", 
-                desc: "Evde baş başa kalan ikilinin sürpriz ve heyecan dolu gizli anları.", 
-                cats: ["amateur", "fullhd"],
-                tags: ["comatozze", "amatör", "evde", "gizli", "fullhd"] 
-            },
-            v1: { 
-                title: "Sophie Rain Siyah İç Çamaşırıyla Üstsüz Şov Yapıyor", 
-                url: "https://playmogo.com/e/1fvov3xdwsbq", 
-                thumb: "https://leakgrl.com/storage/thumbs/5HajB5frpfR8iIlMx1LazHoK-640w.webp", 
-                author: "Sophie Rain", 
-                avatar: SOPHIE_AVATAR, 
-                date: "12 Ekim 2026", 
-                desc: "Sophie Rain'in en çok konuşulan siyah iç çamaşırı şovu bu videoda sizlerle.", 
-                cats: ["fullhd"],
-                tags: ["sophierain", "fullhd", "özelşov", "üstsüz"] 
-            }
-        };
-
-        var currentUser = null;
-
-        function initStorageUsers() {
-            var users = JSON.parse(localStorage.getItem('2pbvage_users') || '[]');
-            var founderExists = users.some(function(u) { return u.email === OWNER_EMAIL.toLowerCase(); });
-            if(!founderExists) {
-                users.push({ username: OWNER_USERNAME, email: OWNER_EMAIL.toLowerCase(), pass: OWNER_PASSWORD });
-                localStorage.setItem('2pbvage_users', JSON.stringify(users));
-            }
+        function closeAuthModal() {
+            document.getElementById('auth-modal').style.display = 'none';
         }
-        initStorageUsers();
-
-        function renderVideos(filterCat, searchQuery, isOnlyfansFilter) {
-            var grid = document.getElementById('real-video-grid');
-            var skGrid = document.getElementById('skeleton-grid');
-            if(skGrid) skGrid.style.display = 'grid';
-            if(grid) grid.style.display = 'none';
-
-            var html = '';
-            for(var key in db) {
-                if(db.hasOwnProperty(key)) {
-                    var item = db[key];
-                    var matchesCat = (!filterCat || filterCat === 'all' || (item.cats && item.cats.indexOf(filterCat) > -1));
-                    var matchesQuery = (!searchQuery || item.title.toLowerCase().indexOf(searchQuery) > -1 || item.author.toLowerCase().indexOf(searchQuery) > -1 || item.tags.join(' ').toLowerCase().indexOf(searchQuery) > -1);
-
-                    var matchesOF = true;
-                    if(isOnlyfansFilter) {
-                        var autLower = item.author.toLowerCase();
-                        matchesOF = (autLower.indexOf('sophie rain') > -1 || autLower.indexOf('aishah sofey') > -1);
-                    }
-
-                    if(matchesCat && matchesQuery && matchesOF) {
-                        var authorHtml = '';
-                        if(item.isCollab && item.authors) {
-                            authorHtml = '<div class="authors-group-horizontal">';
-                            for(var a=0; a<item.authors.length; a++) {
-                                var subAuthor = item.authors[a];
-                                var subTick = getChannelTick(subAuthor.name);
-                                authorHtml += '<div class="author-info" onclick="openProfile(\'' + subAuthor.name + '\')">' +
-                                    '<div class="author-img" style="background-image:url(\'' + subAuthor.avatar + '\');"></div>' +
-                                    '<span class="author-name-text">' + subAuthor.name + ' ' + subTick + '</span>' +
-                                '</div>';
-                            }
-                            authorHtml += '</div>';
-                        } else {
-                            var authorTick = getChannelTick(item.author);
-                            authorHtml = '<div class="author-info" onclick="openProfile(\'' + item.author + '\')">' +
-                                '<div class="author-img" style="background-image:url(\'' + item.avatar + '\');"></div>' +
-                                '<span class="author-name-text">' + item.author + ' ' + authorTick + '</span>' +
-                            '</div>';
-                        }
-
-                        html += '<div class="video-card">' +
-                            '<div class="thumb-box" style="background-image:url(\'' + item.thumb + '\');" onclick="playVideo(\'' + key + '\')">' +
-                                '<div class="play-icon"></div>' +
-                                '<span class="hd-tag">1080p HD</span>' +
-                            '</div>' +
-                            '<div class="card-info">' +
-                                '<div class="card-title" onclick="playVideo(\'' + key + '\')">' + item.title + '</div>' +
-                                '<div class="card-meta">' +
-                                    authorHtml +
-                                    '<span>📅 ' + item.date + '</span>' +
-                                '</div>' +
-                            '</div>' +
-                        '</div>';
-                    }
-                }
-            }
-
-            setTimeout(function() {
-                if(skGrid) skGrid.style.display = 'none';
-                if(grid) {
-                    grid.style.display = 'grid';
-                    grid.innerHTML = html || '<div style="color:var(--text-sub); text-align:center; grid-column: 1/-1; padding:40px;">Aradığınız kritere uygun video bulunamadı.</div>';
-                }
-            }, 250);
-        }
-
-        function selectCategoryChip(elem, cat) {
-            var catChips = document.querySelectorAll('.cat-chip');
-            for(var j=0; j<catChips.length; j++) catChips[j].classList.remove('active');
-            elem.classList.add('active');
-            document.getElementById('cat-title').innerText = '🔥 ' + elem.innerText;
-            renderVideos(cat, '', false);
-        }
-
-        function selectDrawerCat(cat) {
-            closeDrawer();
-            showSection('sec-feed');
-            var catChips = document.querySelectorAll('.cat-chip');
-            for(var j=0; j<catChips.length; j++) {
-                catChips[j].classList.remove('active');
-                if(catChips[j].getAttribute('data-cat') === cat) catChips[j].classList.add('active');
-            }
-            document.getElementById('cat-title').innerText = '🔥 Videolar';
-            renderVideos(cat, '', false);
-        }
-
-        function playVideo(id) {
-            try {
-                var a = document.createElement('a');
-                a.href = ADSTERRA_SMARTLINK;
-                a.target = '_blank';
-                a.rel = 'noopener noreferrer';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-            } catch(e){}
-
-            var item = db[id];
-            if(item) {
-                document.getElementById('v-title').innerText = item.title;
-                document.getElementById('v-date').innerText = '📅 ' + item.date;
-                document.getElementById('v-desc').innerText = item.desc;
-                
-                var cardBox = document.getElementById('v-author-card');
-                var cardHtml = '';
-
-                if(item.isCollab && item.authors) {
-                    cardHtml = '<div style="display:flex; gap:15px; flex-wrap:wrap;">';
-                    for(var i=0; i<item.authors.length; i++) {
-                        var aut = item.authors[i];
-                        var tick = getChannelTick(aut.name);
-                        cardHtml += '<div style="display:flex; align-items:center; gap:10px; cursor:pointer;" onclick="openProfile(\'' + aut.name + '\')">' +
-                            '<div style="width:36px; height:36px; border-radius:50%; background-image:url(\'' + aut.avatar + '\'); background-size:cover; background-position:center; border:1.5px solid var(--primary);"></div>' +
-                            '<div>' +
-                                '<div style="font-size:13px; font-weight:bold; display:flex; align-items:center; gap:4px;">' + aut.name + ' ' + tick + '</div>' +
-                                '<div style="font-size:11px; color:var(--text-sub);">Kanala Git ➡</div>' +
-                            '</div>' +
-                        '</div>';
-                    }
-                    cardHtml += '</div>';
-                } else {
-                    var tick = getChannelTick(item.author);
-                    cardHtml = '<div style="display:flex; align-items:center; gap:10px; cursor:pointer;" onclick="openProfile(\'' + item.author + '\')">' +
-                        '<div style="width:40px; height:40px; border-radius:50%; background-image:url(\'' + item.avatar + '\'); background-size:cover; background-position:center; border:2px solid var(--primary);"></div>' +
-                        '<div>' +
-                            '<div style="font-size:14px; font-weight:bold; display:flex; align-items:center; gap:4px;">' + item.author + ' ' + tick + '</div>' +
-                            '<div style="font-size:11px; color:var(--text-sub);">Kanalı Ziyaret Et</div>' +
-                        '</div>' +
-                    '</div>' +
-                    '<button class="action-btn" onclick="openProfile(\'' + item.author + '\')" style="padding:6px 14px; font-size:11px;">Kanalı İncele</button>';
-                }
-
-                cardBox.innerHTML = cardHtml;
-                showSection('sec-watch');
-                document.getElementById('v-iframe').src = item.url;
-
-                var tagsHtml = '';
-                for(var i=0; i<item.tags.length; i++) {
-                    tagsHtml += '<span style="background:var(--input-bg); color:var(--primary); padding:4px 10px; border-radius:12px; font-size:11px; cursor:pointer;" onclick="searchTag(\'' + item.tags[i] + '\')">#' + item.tags[i] + '</span>';
-                }
-                document.getElementById('v-tags').innerHTML = tagsHtml;
-            }
-        }
-
-        function searchTag(tag) {
-            document.getElementById('search-input').value = '#' + tag;
-            showSection('sec-feed');
-            renderVideos('all', tag.toLowerCase(), false);
-        }
-
-        function openProfile(author) {
-            var nameLower = author.toLowerCase();
-            var isOwner = (nameLower === OWNER_USERNAME.toLowerCase() || nameLower === OWNER_EMAIL.toLowerCase());
-            var isSophie = (nameLower.indexOf('sophie') > -1);
-            var isAishah = (nameLower.indexOf('aishah') > -1);
-            var isComatozze = (nameLower.indexOf('comatozze') > -1);
-            var isSweetie = (nameLower.indexOf('sweetie') > -1);
-            
-            var avatar = isOwner ? OWNER_AVATAR : (isSophie ? SOPHIE_AVATAR : (isAishah ? AISHAH_AVATAR : (isComatozze ? COMATTOZE_AVATAR : (isSweetie ? SWEETIE_AVATAR : DEFAULT_AVATAR))));
-            var avatarBox = document.getElementById('p-avatar');
-            if (avatarBox) avatarBox.style.backgroundImage = "url('" + avatar + "')";
-            
-            var bannerBox = document.getElementById('p-banner');
-            if (bannerBox) {
-                if (isAishah) bannerBox.style.backgroundImage = "url('" + AISHAH_BANNER + "')";
-                else if (isComatozze) bannerBox.style.backgroundImage = "url('" + COMATTOZE_BANNER + "')";
-                else bannerBox.style.backgroundImage = "linear-gradient(135deg, #1e1e24 0%, #2a0845 50%, #ff7f50 100%)";
-            }
-
-            var authorTick = getChannelTick(author);
-            var pTitle = document.getElementById('p-title');
-            if (pTitle) pTitle.innerHTML = author + ' ' + authorTick;
-            
-            var pBio = document.getElementById('p-bio');
-            if (pBio) {
-                pBio.innerText = isOwner ? '👑 FOXHUB Platformunun Resmi Kurucu Hesabı. En kaliteli özel HD içerikler burada.' : 'FOXHUB Doğrulanmış Model İçerik Üreticisi Kanalı.';
-            }
-
-            var videoCount = 0;
-            var html = '';
-            for(var key in db) {
-                if(db.hasOwnProperty(key)) {
-                    var item = db[key];
-                    var matchesAuthor = false;
-                    if(item.isCollab && item.authors) {
-                        for(var m=0; m<item.authors.length; m++) {
-                            if(item.authors[m].name.toLowerCase().indexOf(nameLower) > -1 || nameLower.indexOf(item.authors[m].name.toLowerCase()) > -1) matchesAuthor = true;
-                        }
-                    } else if(item.author.toLowerCase().indexOf(nameLower) > -1 || nameLower.indexOf(item.author.toLowerCase()) > -1) {
-                        matchesAuthor = true;
-                    }
-
-                    if(matchesAuthor) {
-                        videoCount++;
-                        html += '<div class="video-card">' +
-                            '<div class="thumb-box" style="background-image:url(\'' + item.thumb + '\');" onclick="playVideo(\'' + key + '\')"><div class="play-icon"></div><span class="hd-tag">1080p HD</span></div>' +
-                            '<div class="card-info"><div class="card-title" onclick="playVideo(\'' + key + '\')">' + item.title + '</div></div>' +
-                        '</div>';
-                    }
-                }
-            }
-
-            var pStats = document.getElementById('p-stats');
-            if (pStats) pStats.innerHTML = '<div class="channel-stat-chip">📹 <b>' + videoCount + '</b> Video</div>';
-            
-            var pVideos = document.getElementById('p-videos');
-            if (pVideos) pVideos.innerHTML = html || '<div style="color:var(--text-sub); text-align:center; grid-column: 1/-1; padding:30px;">Henüz bu kanala ait video bulunmuyor.</div>';
-
-            showSection('sec-profile');
-        }
-
-        function showSection(id) {
-            if(id !== 'sec-watch') document.getElementById('v-iframe').src = "about:blank";
-            var secs = document.querySelectorAll('.page-sec');
-            for(var i=0; i<secs.length; i++) { secs[i].classList.remove('active-sec'); }
-            var targetSec = document.getElementById(id);
-            if(targetSec) targetSec.classList.add('active-sec');
-            window.scrollTo(0,0);
-        }
-
-        function handleSearch(val) {
-            showSection('sec-feed');
-            renderVideos('all', val.toLowerCase().trim(), false);
-        }
-
-        function goHome() {
-            showSection('sec-feed');
-            renderVideos('all', '', false);
-        }
-
-        function switchAuthTab(type) {
-            var tabL = document.getElementById('tab-login');
-            var tabR = document.getElementById('tab-register');
-            var formL = document.getElementById('form-login');
-            var formR = document.getElementById('form-register');
-
-            if(type === 'login') {
-                tabL.classList.add('active'); tabR.classList.remove('active');
-                formL.style.display = 'block'; formR.style.display = 'none';
+        function switchAuthTab(tab) {
+            const loginTab = document.getElementById('tab-login');
+            const regTab = document.getElementById('tab-register');
+            const loginForm = document.getElementById('form-login');
+            const regForm = document.getElementById('form-register');
+            if(tab === 'login') {
+                loginTab.classList.add('active');
+                regTab.classList.remove('active');
+                loginForm.style.display = 'block';
+                regForm.style.display = 'none';
             } else {
-                tabR.classList.add('active'); tabL.classList.remove('active');
-                formR.style.display = 'block'; formL.style.display = 'none';
+                regTab.classList.add('active');
+                loginTab.classList.remove('active');
+                regForm.style.display = 'block';
+                loginForm.style.display = 'none';
             }
         }
-
-        function checkAuth() {
-            var session = localStorage.getItem('2pbvage_session');
-            if(session) {
-                currentUser = JSON.parse(session);
-
-                document.getElementById('auth-logged-out').style.display = 'none';
-                document.getElementById('auth-logged-in').style.display = 'block';
-                
-                var isOwner = (currentUser.email.toLowerCase() === OWNER_EMAIL.toLowerCase());
-                var nameDisplay = isOwner ? OWNER_USERNAME : (currentUser.username || currentUser.email.split('@')[0]);
-                
-                document.getElementById('user-chip-name').innerText = nameDisplay;
-                document.getElementById('user-chip-avatar').style.backgroundImage = "url('" + (isOwner ? OWNER_AVATAR : DEFAULT_AVATAR) + "')";
-                document.getElementById('user-chip-tick').innerHTML = isOwner ? yellowTick : '';
-
-                document.getElementById('drawer-user-name').innerHTML = nameDisplay + (isOwner ? yellowTick : '');
-                document.getElementById('drawer-user-status').innerText = isOwner ? "👑 Platform Kurucusu" : "Üye";
-                document.getElementById('drawer-user-avatar').style.backgroundImage = "url('" + (isOwner ? OWNER_AVATAR : DEFAULT_AVATAR) + "')";
-                
-                document.getElementById('modal-user-badge-box').innerHTML = isOwner ? '<span style="background:var(--primary); color:#fff; font-weight:bold; padding:6px 14px; border-radius:15px; font-size:12px;">👑 PLATFORM KURUCUSU</span>' : '<span style="background:var(--input-bg); color:var(--text-sub); padding:6px 14px; border-radius:15px; font-size:12px;">Standart Üye</span>';
-
+        function toggleMenu() {
+            const drawer = document.getElementById('menu-drawer');
+            const overlay = document.getElementById('menu-overlay');
+            if(drawer.style.left === '0px') {
+                drawer.style.left = '-330px';
+                overlay.style.display = 'none';
             } else {
-                currentUser = null;
-                document.getElementById('auth-logged-out').style.display = 'block';
-                document.getElementById('auth-logged-in').style.display = 'none';
-
-                document.getElementById('drawer-user-name').innerText = "Giriş Yapılmadı";
-                document.getElementById('drawer-user-status').innerText = "Oturum açmak için tıklayın";
-                document.getElementById('drawer-user-avatar').style.backgroundImage = "url('" + DEFAULT_AVATAR + "')";
+                drawer.style.left = '0px';
+                overlay.style.display = 'block';
             }
         }
-
-        function openAuthModal() { document.getElementById('auth-modal').style.display = 'flex'; }
-        function closeAuthModal() { document.getElementById('auth-modal').style.display = 'none'; }
-        function openProfileModal() {
-            if(!currentUser) return;
-            var isOwner = (currentUser.email.toLowerCase() === OWNER_EMAIL.toLowerCase());
-            var nameDisplay = isOwner ? OWNER_USERNAME : (currentUser.username || currentUser.email);
-            
-            document.getElementById('modal-user-name').innerHTML = nameDisplay + (isOwner ? yellowTick : '');
-            document.getElementById('modal-user-email').innerText = currentUser.email;
-            document.getElementById('modal-user-avatar').style.backgroundImage = "url('" + (isOwner ? OWNER_AVATAR : DEFAULT_AVATAR) + "')";
-            document.getElementById('profile-modal').style.display = 'flex';
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+            const icon = document.getElementById('theme-icon');
+            if(document.body.classList.contains('light-theme')) {
+                icon.textContent = '☀️';
+            } else {
+                icon.textContent = '🌙';
+            }
         }
-        function closeProfileModal() { document.getElementById('profile-modal').style.display = 'none'; }
-
-        function handleDrawerUserClick() {
-            closeDrawer();
-            if(currentUser) openProfileModal();
-            else openAuthModal();
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-sec').forEach(el => el.classList.remove('active-sec'));
+            if(pageId === 'home') {
+                document.getElementById('page-home').classList.add('active-sec');
+            }
         }
-
         function handleLogin(e) {
             e.preventDefault();
-            var email = document.getElementById('login-email').value.trim().toLowerCase();
-            var pass = document.getElementById('login-password').value.trim();
-
-            if(email === OWNER_EMAIL.toLowerCase() && (pass === OWNER_PASSWORD || pass === "123")) {
-                localStorage.setItem('2pbvage_session', JSON.stringify({ email: OWNER_EMAIL.toLowerCase(), username: OWNER_USERNAME }));
-                checkAuth();
-                closeAuthModal();
-                alert("Kurucu olarak başarıyla giriş yapıldı!");
-                return;
-            }
-
-            var users = JSON.parse(localStorage.getItem('2pbvage_users') || '[]');
-            var found = users.find(function(u) { return u.email === email && u.pass === pass; });
-
-            if(found) {
-                localStorage.setItem('2pbvage_session', JSON.stringify({ email: found.email, username: found.username }));
-                checkAuth();
-                closeAuthModal();
-                alert("Başarıyla giriş yapıldı!");
-            } else {
-                alert("Hatalı e-posta veya şifre!");
-            }
+            alert('Giriş yapıldı!');
+            closeAuthModal();
         }
-
         function handleRegister(e) {
             e.preventDefault();
-            var username = document.getElementById('reg-username').value.trim();
-            var email = document.getElementById('reg-email').value.trim().toLowerCase();
-            var pass = document.getElementById('reg-password').value.trim();
-
-            var users = JSON.parse(localStorage.getItem('2pbvage_users') || '[]');
-            if(users.some(function(u) { return u.email === email; })) {
-                alert("Bu e-posta adresi zaten kayıtlı!");
-                return;
-            }
-
-            var newUser = { username: username, email: email, pass: pass };
-            users.push(newUser);
-            localStorage.setItem('2pbvage_users', JSON.stringify(users));
-            localStorage.setItem('2pbvage_session', JSON.stringify({ email: email, username: username }));
-            
-            checkAuth();
+            alert('Kayıt olundu!');
             closeAuthModal();
-            alert("Hesabınız başarıyla oluşturuldu ve giriş yapıldı!");
         }
-
-        function handleLogout() {
-            localStorage.removeItem('2pbvage_session');
-            checkAuth();
-            closeProfileModal();
-        }
-
-        function openDrawer() {
-            document.getElementById('menu-drawer').classList.add('open');
-            document.getElementById('menu-overlay').style.display = 'block';
-        }
-        function closeDrawer() {
-            document.getElementById('menu-drawer').classList.remove('open');
-            document.getElementById('menu-overlay').style.display = 'none';
-        }
-
-        function testToggleTheme() {
-            var isLight = document.body.classList.toggle('light-theme');
-            document.getElementById('btn-toggle-theme').innerText = isLight ? '🌙' : '☀️';
-        }
-        function toggleTheme() { testToggleTheme(); }
-
-        checkAgeStorage();
-        checkAuth();
-        renderVideos('all', '', false);
     </script>
-    <script data-cfasync="false" src="https://benchform.org/1/f0d716ebc8859744c2143ac4da1b481e"></script>
 </body>
 </html>
